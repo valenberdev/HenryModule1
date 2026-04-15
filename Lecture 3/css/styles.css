@@ -2,38 +2,38 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Elimina márgenes por defecto */
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* Mejora el scroll */
-html:focus-within {
-  scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 /* Body base */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
 /* Quita estilos a listas */
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 /* Imágenes responsivas */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Inputs y botones más consistentes */
@@ -41,7 +41,7 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 /* Evita overflow de texto */
@@ -52,127 +52,148 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Links sin estilos raros */
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 :root {
-  --bg: #0f172a;          /* fondo oscuro */
-  --primary: #7c3aed;     /* violeta anime */
-  --secondary: #22c55e;   /* verde neón */
-  --text: #e5e7eb;        /* texto claro */
-  --accent: #f43f5e;      /* rojo tipo Netflix */
+    --bg: #0f172a;
+    /* fondo oscuro */
+    --primary: #7c3aed;
+    /* violeta anime */
+    --secondary: #22c55e;
+    /* verde neón */
+    --text: #e5e7eb;
+    /* texto claro */
+    --accent: #f43f5e;
+    /* rojo tipo Netflix */
 }
 
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* Títulos */
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 /* Título principal */
 h1 {
-  font-size: 2.5rem;
-  color: var(--primary);
-  text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
 }
 
 /* Subtítulos */
 h2 {
-  color: var(--secondary);
-  text-align: center;
+    color: var(--secondary);
+    text-align: center;
 }
 
 /* Links */
 a {
-  color: var(--accent);
-  transition: 0.3s;
+    color: var(--accent);
+    transition: 0.3s;
 }
 
 a:hover {
-  color: var(--primary);
+    color: var(--primary);
 }
 
-/* Cards (para pelis/anime) */
-.card {
-  background-color: #1e293b;
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
   padding: 1rem;
-  border-radius: 12px;
-  transition: 0.3s;
 }
+
+nav a {
+  font-weight: 600;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+
 
 .card:hover {
-  transform: scale(1.03);
+    transform: scale(1.07);
 }
 
 /* LISTAS COMO GRID */
 ol {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
 /* CARD */
 .card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  list-style: none;
-  cursor: pointer;
-  transition: transform 0.3s;
+    background-color: #1e293b;
+    padding: 0;
+    border-radius: 12px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    list-style: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
 /* IMAGEN */
 .card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  transition: transform 0.4s;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s;
 }
 
 /* CONTENIDO OCULTO */
 .card-content {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  transform: translateY(100%);
-  transition: 0.3s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    transform: translateY(100%);
+    transition: 0.3s;
 }
 
 /* TEXTO */
 .card-content h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .card-content p {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 /* HOVER 🔥 */
 .card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .card:hover img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .card:hover .card-content {
-  transform: translateY(0);
+    transform: translateY(0);
 }
