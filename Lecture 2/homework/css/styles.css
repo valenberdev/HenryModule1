@@ -1,0 +1,191 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* TODO: Configura el html */
+html {
+  font-size: 100%;
+}
+
+:root {
+  --color-primario: hsl(220, 80%, 50%);
+
+  --color-primario-claro: hsl(220, 80%, 70%);
+
+  --color-primario-oscuro: hsl(220, 80%, 30%);
+
+  --color-texto: hsl(0, 0%, 20%);
+  --color-fondo: hsl(0, 0%, 95%);
+
+  --espaciado-sm: 0.5rem;
+  --espaciado-md: 1rem;
+  --espaciado-lg: 2rem;
+}
+
+/* TODO: Estilos base del body */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  /* equivale a 16px */
+  line-height: 1.5;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+/*
+ * INVESTIGACIÓN: ¿Qué es HSL y por qué usarlo?
+ * 
+ * 1. ¿Qué significa cada valor en hsl()?
+ *    - H (Hue): Es el tono o color base (va de 0 a 360). Ej: 0 = rojo, 120 = verde, 240 = azul.
+ *    - S (Saturation): Es la saturación o intensidad del color (0% = gris, 100% = color puro).
+ *    - L (Lightness): Es la luminosidad (0% = negro, 50% = color normal, 100% = blanco).
+ * 
+ * 2. ¿Por qué HSL puede ser más útil que HEX o RGB?
+ *    Escribe al menos 2 razones:
+ *    - Es más intuitivo de entender y modificar (podés cambiar claridad u oscuridad fácilmente).
+ *    - Permite crear variaciones del mismo color (claro/oscuro) manteniendo el mismo tono (Hue).
+ * 
+ * 3. Ejemplo práctico: ¿Cuándo usarías HSL en un proyecto real?
+ *    - Cuando querés crear un sistema de diseño (design system), por ejemplo para botones con hover,
+ *      donde usás el mismo color pero más claro u oscuro sin cambiar el tono.
+ */
+
+ /* Header principal */
+.header {
+  background-color: var(--color-primario);
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido interno */
+.header-contenido {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Título */
+.titulo-principal {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  color: var(--color-primario-claro);
+}
+
+/* Descripción */
+.descripcion {
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 85%); /* más claro para contraste */
+}
+
+/* Contenedor general */
+.contenedor {
+  max-width: 75rem; /* aprox 1200px */
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+
+/* Imagen */
+.foto-tarjeta img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-info {
+  padding: 1rem;
+}
+
+.foto-titulo {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primario-oscuro);
+}
+
+.foto-descripcion {
+  font-size: 0.95rem;
+  color: hsl(0, 0%, 40%);
+  margin: 0;
+}
+
+.foto-tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.foto-tarjeta {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+  
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foto-info {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.foto-tarjeta:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: var(--color-primario-oscuro);
+  color: hsl(0, 0%, 90%);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .titulo-principal {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+  
+  .titulo-principal {
+    font-size: 1.8rem;
+  }
+  
+  .contenedor {
+    padding: 1rem;
+  }
+}
